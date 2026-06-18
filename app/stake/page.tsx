@@ -8,6 +8,7 @@ import { TokenCard } from '@/components/TokenCard'
 import Link from 'next/link'
 
 const CONTRACT_ADDRESS = '0xEA1221B4d80A89BD8C75248Fae7c176BD1854698'
+const UNISWAP_URL = 'https://app.uniswap.org/swap?outputCurrency=0xEA1221B4d80A89BD8C75248Fae7c176BD1854698&chain=base'
 
 export default function StakePage() {
   const [stakeAmount, setStakeAmount] = useState('1000')
@@ -250,6 +251,29 @@ export default function StakePage() {
                 <p className="text-muted-foreground mt-4 pt-4 border-t border-border">{faq.a}</p>
               </details>
             ))}
+          </div>
+        </Section>
+
+        {/* Need AGL Section */}
+        <Section className="py-12 lg:py-16 border-y border-border">
+          <div className="text-center max-w-2xl mx-auto space-y-6">
+            <div className="inline-block px-4 py-2 bg-secondary rounded-full text-sm font-semibold text-accent">
+              Don't Have AGL Yet?
+            </div>
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground">
+              Get AGL Tokens First
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Purchase AGL on Uniswap using your favorite stablecoins. Once you have tokens, come back to stake and start earning rewards.
+            </p>
+            <a 
+              href={UNISWAP_URL} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn-primary text-center inline-block"
+            >
+              Buy AGL on Uniswap ↗
+            </a>
           </div>
         </Section>
 

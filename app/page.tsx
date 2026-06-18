@@ -9,6 +9,7 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 
 const CONTRACT_ADDRESS = '0xEA1221B4d80A89BD8C75248Fae7c176BD1854698'
+const UNISWAP_URL = 'https://app.uniswap.org/swap?outputCurrency=0xEA1221B4d80A89BD8C75248Fae7c176BD1854698&chain=base'
 
 export default function Home() {
   const [stats, setStats] = useState({
@@ -48,11 +49,16 @@ export default function Home() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Link href="/stake" className="btn-primary text-center">
+                <a 
+                  href={UNISWAP_URL} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="btn-primary text-center"
+                >
+                  Buy AGL on Uniswap ↗
+                </a>
+                <Link href="/stake" className="btn-secondary text-center">
                   Start Staking →
-                </Link>
-                <Link href="/whitepaper" className="btn-secondary text-center">
-                  Read Whitepaper
                 </Link>
               </div>
             </div>
@@ -157,6 +163,34 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </Section>
+
+        {/* Call to Action - Buy Section */}
+        <Section className="py-16 lg:py-24 bg-accent/10 border-y border-accent/20">
+          <div className="text-center max-w-2xl mx-auto space-y-6">
+            <div className="inline-block px-4 py-2 bg-accent/20 rounded-full text-sm font-semibold text-accent">
+              Ready to Get Started?
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-foreground">
+              Buy AGL Today
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Join thousands of AGL holders and start earning rewards. Buy on Uniswap with just a few clicks.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+              <a 
+                href={UNISWAP_URL} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="btn-primary text-center inline-block"
+              >
+                Buy AGL on Uniswap ↗
+              </a>
+              <Link href="/stake" className="btn-secondary text-center">
+                Learn About Staking
+              </Link>
             </div>
           </div>
         </Section>

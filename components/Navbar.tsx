@@ -25,6 +25,8 @@ export function Navbar({ logoUrl = '/agl-logo.svg', logoText = 'AGL' }: NavbarPr
     { label: 'Stake', href: '/stake' },
   ]
 
+  const UNISWAP_URL = 'https://app.uniswap.org/swap?outputCurrency=0xEA1221B4d80A89BD8C75248Fae7c176BD1854698&chain=base'
+
   const isActive = (href: string) => pathname === href
 
   return (
@@ -46,7 +48,7 @@ export function Navbar({ logoUrl = '/agl-logo.svg', logoText = 'AGL' }: NavbarPr
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-1 mr-4">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -61,6 +63,16 @@ export function Navbar({ logoUrl = '/agl-logo.svg', logoText = 'AGL' }: NavbarPr
               </Link>
             ))}
           </div>
+
+          {/* Buy AGL Button */}
+          <a
+            href={UNISWAP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden lg:inline-flex px-5 py-2 bg-accent text-accent-foreground rounded-lg font-semibold hover:shadow-lg transition-all active:scale-95 whitespace-nowrap text-sm"
+          >
+            Buy AGL ↗
+          </a>
 
           {/* Mobile Menu Button */}
           <button
@@ -110,6 +122,15 @@ export function Navbar({ logoUrl = '/agl-logo.svg', logoText = 'AGL' }: NavbarPr
                 {item.label}
               </Link>
             ))}
+            <a
+              href={UNISWAP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-accent text-accent-foreground rounded-lg font-medium hover:shadow-lg transition-all active:scale-95 text-sm text-center"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Buy AGL ↗
+            </a>
           </div>
         )}
       </div>
