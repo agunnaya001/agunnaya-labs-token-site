@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { WalletButton } from './WalletButton'
 
 interface NavbarProps {
   logoUrl?: string
@@ -64,15 +65,18 @@ export function Navbar({ logoUrl = '/agl-logo.svg', logoText = 'AGL' }: NavbarPr
             ))}
           </div>
 
-          {/* Buy AGL Button */}
-          <a
-            href={UNISWAP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden lg:inline-flex px-5 py-2 bg-accent text-accent-foreground rounded-lg font-semibold hover:shadow-lg transition-all active:scale-95 whitespace-nowrap text-sm"
-          >
-            Buy AGL ↗
-          </a>
+          {/* Wallet Button & Buy AGL */}
+          <div className="hidden lg:flex items-center gap-3">
+            <WalletButton />
+            <a
+              href={UNISWAP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2 bg-secondary text-foreground rounded-lg font-semibold hover:shadow-lg transition-all active:scale-95 whitespace-nowrap text-sm border border-border"
+            >
+              Buy AGL ↗
+            </a>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -108,6 +112,9 @@ export function Navbar({ logoUrl = '/agl-logo.svg', logoText = 'AGL' }: NavbarPr
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <div className="lg:hidden pb-4 flex flex-col gap-2">
+            <div className="px-4 py-2">
+              <WalletButton />
+            </div>
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -126,7 +133,7 @@ export function Navbar({ logoUrl = '/agl-logo.svg', logoText = 'AGL' }: NavbarPr
               href={UNISWAP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 bg-accent text-accent-foreground rounded-lg font-medium hover:shadow-lg transition-all active:scale-95 text-sm text-center"
+              className="px-4 py-2 bg-secondary text-foreground rounded-lg font-medium hover:shadow-lg transition-all active:scale-95 text-sm text-center border border-border"
               onClick={() => setMobileMenuOpen(false)}
             >
               Buy AGL ↗
