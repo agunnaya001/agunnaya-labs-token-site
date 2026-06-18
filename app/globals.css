@@ -200,11 +200,11 @@
 
 @layer components {
   .btn-primary {
-    @apply px-6 py-3 bg-accent text-accent-foreground rounded-lg font-semibold hover:bg-opacity-90 transition-all active:scale-95;
+    @apply px-6 py-3 bg-accent text-accent-foreground rounded-lg font-semibold hover:shadow-lg transition-all active:scale-95 opacity-100 hover:opacity-90;
   }
   
   .btn-secondary {
-    @apply px-6 py-3 bg-secondary text-secondary-foreground rounded-lg font-semibold hover:bg-opacity-80 transition-all;
+    @apply px-6 py-3 bg-secondary text-secondary-foreground rounded-lg font-semibold hover:shadow-md transition-all opacity-100 hover:opacity-80;
   }
   
   .card {

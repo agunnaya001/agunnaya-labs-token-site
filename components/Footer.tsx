@@ -20,6 +20,8 @@ export function Footer({
   companyName = 'Agunnaya Labs',
   contractAddress,
 }: FooterProps) {
+  const UNISWAP_URL = 'https://app.uniswap.org/swap?outputCurrency=0xEA1221B4d80A89BD8C75248Fae7c176BD1854698&chain=base'
+
   const footerLinks: FooterLink[] = [
     { label: 'Home', href: '/' },
     { label: 'Tokenomics', href: '/tokenomics' },
@@ -58,10 +60,18 @@ export function Footer({
             </ul>
           </div>
 
-          {/* Community Section */}
+          {/* Trade & Community */}
           <div>
-            <h3 className="font-bold text-lg mb-4">Community</h3>
+            <h3 className="font-bold text-lg mb-4">Actions</h3>
             <div className="flex flex-col gap-2">
+              <a
+                href={UNISWAP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-accent font-semibold hover:underline transition-colors"
+              >
+                Buy AGL on Uniswap ↗
+              </a>
               <a
                 href="https://github.com"
                 target="_blank"
