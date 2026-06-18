@@ -10,34 +10,48 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'Agunnaya Labs Token (AGL) - Next-Generation Blockchain Solutions',
+  description: 'Explore AGL token, a pioneering cryptocurrency designed for innovative blockchain applications. Learn about tokenomics, smart contracts, and join the community.',
+  keywords: ['AGL', 'Agunnaya Labs', 'cryptocurrency', 'token', 'blockchain', 'Web3'],
   generator: 'v0.app',
-  icons: {
-    icon: [
+  creator: 'Agunnaya Labs',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://www.agunnayalabs.xyz',
+    siteName: 'Agunnaya Labs Token',
+    title: 'Agunnaya Labs Token (AGL)',
+    description: 'Next-Generation Blockchain Solutions',
+    images: [
       {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: 'https://www.agunnayalabs.xyz/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'AGL Token',
       },
     ],
-    apple: '/apple-icon.png',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    creator: '@agunnayalabs',
+    title: 'Agunnaya Labs Token (AGL)',
+    description: 'Next-Generation Blockchain Solutions',
+  },
+  icons: {
+    icon: '/agl-logo.svg',
+    apple: '/agl-logo.svg',
   },
 }
 
 export const viewport: Viewport = {
   colorScheme: 'light dark',
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
+    { media: '(prefers-color-scheme: light)', color: '#39FF14' },
+    { media: '(prefers-color-scheme: dark)', color: '#39FF14' },
   ],
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
 }
 
 export default function RootLayout({
@@ -46,7 +60,22 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} bg-background`}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                  document.documentElement.classList.add('dark')
+                } else {
+                  document.documentElement.classList.remove('dark')
+                }
+              } catch (e) {}
+            `,
+          }}
+        />
+      </head>
       <body className="font-sans antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
