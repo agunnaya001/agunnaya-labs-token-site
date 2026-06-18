@@ -1,18 +1,31 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useAccount } from 'wagmi'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { Section } from '@/components/Section'
 import { TokenCard } from '@/components/TokenCard'
 import Link from 'next/link'
+import { useSponsoredTransaction } from '@/hooks/useSponsoredTransaction'
 
 const CONTRACT_ADDRESS = '0xEA1221B4d80A89BD8C75248Fae7c176BD1854698'
 const UNISWAP_URL = 'https://app.uniswap.org/swap?outputCurrency=0xEA1221B4d80A89BD8C75248Fae7c176BD1854698&chain=base'
 
 export default function StakePage() {
+  const { isConnected } = useAccount()
+  const { checkEligibility, sponsorshipStatus, isLoading } = useSponsoredTransaction()
+  
   const [stakeAmount, setStakeAmount] = useState('1000')
   const [selectedPeriod, setSelectedPeriod] = useState('30')
+  const [checkedSponsorship, setCheckedSponsorship] = useState(false)
+
+  useEffect(() => {
+    if (isConnected && !checkedSponsorship) {
+      checkEligibility()
+      setCheckedSponsorship(true)
+    }
+  }, [isConnected, checkEligibility, checkedSponsorship])
 
   const calculateRewards = () => {
     const amount = parseFloat(stakeAmount) || 0
@@ -132,7 +145,26 @@ export default function StakePage() {
                   <p className="text-sm text-muted-foreground mt-2">AGL over {selectedPeriod} days</p>
                 </div>
 
-                <button className="w-full btn-primary">Connect Wallet to Stake</button>
+                {isConnected && (
+                  <div className={`p-4 rounded-lg border ${
+                    sponsorshipStatus.approved
+                      ? 'bg-green-500/10 border-green-500/30'
+                      : 'bg-orange-500/10 border-orange-500/30'
+                  }`}>
+                    <p className={`text-sm font-semibold ${
+                      sponsorshipStatus.approved ? 'text-green-400' : 'text-orange-400'
+                    }`}>
+                      {sponsorshipStatus.approved ? '✓ Gas Sponsorship Eligible' : '⚠️ Not Eligible for Gas Sponsorship'}
+                    </p>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      {sponsorshipStatus.reason}
+                    </p>
+                  </div>
+                )}
+
+                <button className="w-full btn-primary">
+                  {isConnected ? (sponsorshipStatus.approved ? 'Stake (Gas Free!)' : 'Stake with Gas Fee') : 'Connect Wallet to Stake'}
+                </button>
               </div>
             </div>
 
