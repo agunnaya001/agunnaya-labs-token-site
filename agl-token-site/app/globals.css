@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&display=swap');
+
+/* CSS Variables */
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #14141a;
+  --bg-tertiary: #1e1e26;
+  
+  --accent: #39FF14;
+  --accent-dark: #2dd60f;
+  --accent-light: #7fff59;
+  
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b8;
+  --text-tertiary: #6a6a72;
+  
+  --border: #2a2a32;
+  --border-light: #3a3a42;
+  
+  --success: #00ff00;
+  --danger: #ff0000;
+  --warning: #ffaa00;
+  
+  --shadow: 0 0 20px rgba(57, 255, 20, 0.1);
+  --glow: 0 0 20px rgba(57, 255, 20, 0.2);
+}
+
+/* Dark mode is default */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: clamp(2rem, 8vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  line-height: 1.1;
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+}
+
+h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5em;
+}
+
+p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1em;
+}
+
+/* Links */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-light);
+  text-shadow: 0 0 10px var(--accent);
+}
+
+/* Code/Numbers styling */
+code,
+.mono,
+[data-mono] {
+  font-family: 'DM Mono', monospace;
+  color: var(--accent);
+  background-color: var(--bg-tertiary);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent);
+  border-radius: 5px;
+  background-image: linear-gradient(180deg, var(--accent), var(--accent-dark));
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent-light);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--accent);
+  color: var(--bg-primary);
+}
+
+/* Utility Classes */
+.glow {
+  box-shadow: var(--glow);
+}
+
+.glow-strong {
+  box-shadow: 0 0 30px rgba(57, 255, 20, 0.3);
+}
+
+.accent-text {
+  color: var(--accent);
+}
+
+.accent-glow {
+  text-shadow: 0 0 10px var(--accent);
+}
+
+.grid-lines {
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(57, 255, 20, 0.03) 0px,
+      rgba(57, 255, 20, 0.03) 1px,
+      transparent 1px,
+      transparent 2px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(57, 255, 20, 0.03) 0px,
+      rgba(57, 255, 20, 0.03) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+  background-size: 50px 50px;
+}
+
+.noise {
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.03),
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+  animation: noise 0.15s steps(2) infinite;
+}
+
+@keyframes noise {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 2px;
+  }
+}
+
+/* Button Base Styles */
+button,
+.button {
+  font-family: 'DM Sans', sans-serif;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--accent);
+  background-color: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.875rem;
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover,
+.button:hover {
+  background-color: var(--accent);
+  color: var(--bg-primary);
+  box-shadow: var(--glow);
+}
+
+button:active,
+.button:active {
+  transform: scale(0.98);
+}
+
+/* Input Styles */
+input,
+textarea,
+select {
+  background-color: var(--bg-tertiary);
+  border: 2px solid var(--border);
+  color: var(--text-primary);
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
+}
+
+/* Placeholder */
+::placeholder {
+  color: var(--text-tertiary);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.slide-in {
+  animation: slideIn 0.5s ease-in-out;
+}
+
+.glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
