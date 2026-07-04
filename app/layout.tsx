@@ -59,8 +59,12 @@ export const metadata: Metadata = {
     images: ['https://www.agunnayalabs.xyz/images/og-image.png'],
   },
   icons: {
-    icon: '/images/agl-logo-neon.png',
-    apple: '/images/agl-logo-neon.png',
+    icon: [
+      { url: '/favicon.ico.png', sizes: '64x64', type: 'image/png' },
+      { url: '/agl-logo.svg', type: 'image/svg+xml' },
+    ],
+    apple: '/app-icon.png',
+    shortcut: '/favicon.ico.png',
   },
   manifest: '/manifest.json',
 }
@@ -89,7 +93,12 @@ export default function RootLayout({
         '@id': 'https://www.agunnayalabs.xyz/#organization',
         name: 'Agunnaya Labs',
         url: 'https://www.agunnayalabs.xyz',
-        logo: 'https://www.agunnayalabs.xyz/images/agl-logo-neon.png',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://www.agunnayalabs.xyz/agl-logo.svg',
+          width: 256,
+          height: 256,
+        },
         description: 'GameFi and DeFi ecosystem built on Base blockchain',
         sameAs: ['https://x.com/agunnayalabs', 'https://github.com/agunnaya001'],
       },

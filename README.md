@@ -1,12 +1,21 @@
 # Agunnaya Labs Token (AGL)
 
+## Status & Badges
+
 [![Next.js](https://img.shields.io/badge/Next.js-16.0-black?style=flat-square&logo=next.js)](https://nextjs.org)
 [![React](https://img.shields.io/badge/React-19-blue?style=flat-square&logo=react)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.0-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com)
+[![Vercel Deployed](https://img.shields.io/badge/Deployed-Vercel-success?style=flat-square&logo=vercel)](https://vercel.com)
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
-[![Website](https://img.shields.io/badge/Website-agunnayalabs.xyz-39FF14?style=flat-square)](https://www.agunnayalabs.xyz)
-[![Contract](https://img.shields.io/badge/Contract-0xEA1221B4d80A89BD8C75248Fae7c176BD1854698-blue?style=flat-square)](https://basescan.org/token/0xEA1221B4d80A89BD8C75248Fae7c176BD1854698)
+
+## Project Links
+
+[![Website](https://img.shields.io/badge/Website-agunnayalabs.xyz-39FF14?style=flat-square&logo=globe)](https://www.agunnayalabs.xyz)
+[![Uniswap Trade](https://img.shields.io/badge/Trade-Uniswap%20V4-ff007a?style=flat-square&logo=uniswap)](https://app.uniswap.org/swap?outputCurrency=0xEA1221B4d80A89BD8C75248Fae7c176BD1854698&chain=base)
+[![BaseScan Verify](https://img.shields.io/badge/Contract-BaseScan-blue?style=flat-square&logo=ethereum)](https://basescan.org/token/0xEA1221B4d80A89BD8C75248Fae7c176BD1854698)
+[![GitHub](https://img.shields.io/badge/GitHub-agunnaya001-000?style=flat-square&logo=github)](https://github.com/agunnaya001)
+[![Branding Guide](https://img.shields.io/badge/Branding-Guide-9d4edd?style=flat-square&logo=palette)](./BRANDING.md)
 
 > Next-Generation Blockchain Solutions | Modern Cryptocurrency Token Platform
 
@@ -21,11 +30,20 @@ Agunnaya Labs Token (AGL) is a pioneering cryptocurrency project built on a mode
 ## ✨ Features
 
 ### 🎨 Modern Design System
-- **Minimalist Aesthetic**: Clean, professional interface with neon green accents (#39FF14)
-- **Dark/Light Theme**: Full theme support with semantic color tokens
-- **Responsive Design**: Mobile-first approach optimized for all devices
-- **Accessibility**: WCAG compliant with proper semantic HTML and ARIA attributes
-- **Performance**: Optimized Core Web Vitals and fast load times
+- **Cyberpunk Aesthetic**: Neon green (#39FF14) accents with dark gaming UI
+- **Dark/Light Theme**: Full theme support with semantic design tokens
+- **Responsive Design**: Mobile-first approach with pixel-perfect layouts
+- **Accessibility**: WCAG 2.1 AA+ compliant with semantic HTML and ARIA
+- **Performance**: Core Web Vitals optimized, LCP < 2.5s, CLS < 0.1
+- **Comprehensive Branding**: Professional logo system with SVG/PNG variants
+
+### 🚀 Token Features
+- **Real-Time Data**: Live token metrics from GeckoTerminal (5-min ISR cache)
+- **Trading Integration**: Direct Uniswap V4 swap links for AGL/CHONK9K
+- **Security Display**: GT Security Score, DeFi Scan badges, honeypot detection
+- **Liquidity Info**: Pool details (6.24B CHONK9K, $6.92K liquidity)
+- **Holder Count**: Active community tracking (25+ holders)
+- **Price Ticker**: Live price updates ($0.03175) with trend indicators
 
 ### 📊 Comprehensive Pages
 
@@ -134,50 +152,102 @@ agunnaya-labs-token-site/
 └── package.json            # Dependencies & scripts
 ```
 
-## 🎨 Design System
+## 🎨 Design System & Branding
 
 ### Color Palette
 
-**Light Mode:**
+**Dark Mode (Primary)**
+- Background: `#0f0f0f` (Deep black)
+- Foreground: `#f5f5f5` (Off-white)
+- Accent: `#39FF14` (Neon Green) - Primary brand color
+- Secondary: `#2a2a2a` (Dark gray)
+- Borders: `#2a2a2a` (Dark gray)
+- Cyan: `#00d4ff` (Secondary accent)
+
+**Light Mode**
 - Background: `#f9f7f4` (Off-white)
 - Foreground: `#1a1a1a` (Charcoal)
 - Accent: `#39FF14` (Neon Green)
-- Border: `#e6e0d9` (Warm gray)
-
-**Dark Mode:**
-- Background: `#0f0f0f` (Deep black)
-- Foreground: `#f5f5f5` (Off-white)
-- Accent: `#39FF14` (Neon Green)
-- Border: `#2a2a2a` (Dark gray)
+- Secondary: `#e6e0d9` (Warm gray)
+- Borders: `#e6e0d9` (Warm gray)
 
 ### Typography
 
-- **Heading Font**: Inter (System Sans)
-- **Body Font**: Inter (System Sans)
+- **Heading Font**: Inter (System Sans-Serif)
+- **Body Font**: Inter (System Sans-Serif)
 - **Monospace Font**: Geist Mono
+- **Type Hierarchy**: H1-H4 headings, body, small, caption
 
-## 🔐 Smart Contract Details
+### Logo & Branding Assets
 
-- **Token Name**: Agunnaya Labs Token
-- **Symbol**: AGL
-- **Contract Address**: `0xEA1221B4d80A89BD8C75248Fae7c176BD1854698`
-- **Network**: Base
-- **Verification Status**: ✅ Verified on Basescan
-- **Explorer Link**: https://basescan.org/token/0xEA1221B4d80A89BD8C75248Fae7c176BD1854698
+**Logo Files:**
+- `/public/agl-logo.svg` - Scalable vector logo (primary)
+- `/public/agl-logo.png` - Raster logo (256x256)
+- `/public/favicon.ico.png` - Browser tab icon (64x64)
+- `/public/app-icon.png` - Mobile app icon (180x180)
 
-## 📊 Token Information
+**Social & Marketing:**
+- `/public/og-image.png` - Open Graph sharing image (1200x630)
+- `/public/social-banner.png` - Social media banner (1200x600)
+- `/public/hero-banner.png` - Page hero image (1920x1080)
 
-### Tokenomics Summary
+**Brand Guide**: See [BRANDING.md](./BRANDING.md) for comprehensive branding guidelines, usage rules, and design specifications.
 
-The AGL token features a carefully designed tokenomics structure:
+## 🪙 Token Information
+
+### Smart Contract Details
+
+| Property | Value |
+|----------|-------|
+| **Token Name** | Agunnaya Labs Token |
+| **Symbol** | AGL |
+| **Network** | Base Mainnet |
+| **Chain ID** | 8453 |
+| **Contract Address** | `0xEA1221B4d80A89BD8C75248Fae7c176BD1854698` |
+| **Verification** | ✅ Verified on BaseScan |
+| **Contract Type** | ERC-20 Token |
+
+### Live Token Metrics
+
+Real-time data updated every 5 minutes from GeckoTerminal:
+
+| Metric | Value |
+|--------|-------|
+| **Current Price** | $0.03175 |
+| **Market Cap** | $31.74M |
+| **24h Volume** | $748.65 |
+| **Liquidity** | $6.92K |
+| **Holders** | 25+ active holders |
+| **Pool Age** | 4+ days |
+| **Exchange Rate** | 1 AGL = 73,915.95 CHONK9K |
+
+### Trading Information
+
+- **DEX**: Uniswap V4 (Base)
+- **Pair**: AGL / CHONK9K
+- **Pool Fee**: 0.01% (ultra-low)
+- **Pool Address**: `0xe7d6de2bf95c563a819eb62cbf0c7e9020df53c875ccfbaf3fdccaa1fd25b085`
+- **Trade Link**: [Buy AGL on Uniswap](https://app.uniswap.org/swap?outputCurrency=0xEA1221B4d80A89BD8C75248Fae7c176BD1854698&chain=base)
+
+### Security & Audits
+
+| Audit | Status | Details |
+|-------|--------|---------|
+| **GT Security Score** | 28/100 | Flagged for review |
+| **DeFi Scan Audit** | ✅ Passed | Contract verified |
+| **Honeypot Detection** | ✅ Not a Honeypot | Free to trade |
+| **Open Source** | ✅ Yes | Contract verified on BaseScan |
+| **Rug Risk** | ✅ Low | Immutable contract |
+
+### Tokenomics
 
 - **Total Supply**: View on [Tokenomics Page](/tokenomics)
 - **Distribution**: Community-driven allocation
-- **Vesting Schedule**: Gradual release over time
-- **Staking APY**: 12% per annum
+- **Staking Tiers**: 4 APY levels with progressive rewards
 - **Governance**: Community-owned and operated
+- **Utility**: Staking rewards, Vibe Studio AI IDE access, compute billing
 
-For detailed tokenomics information, visit the [Tokenomics Dashboard](/tokenomics).
+For detailed tokenomics breakdown, visit the [Tokenomics Dashboard](/tokenomics).
 
 ## 🧪 Testing
 
