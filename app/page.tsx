@@ -1,27 +1,25 @@
-'use client'
-
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { Section } from '@/components/Section'
 import { TokenCard } from '@/components/TokenCard'
 import { CommunityLinks } from '@/components/CommunityLinks'
+import { TokenMetrics } from '@/components/TokenMetrics'
+import { SecurityBadges } from '@/components/SecurityBadges'
+import { TradingPairCard } from '@/components/TradingPairCard'
+import { LivePriceTicker } from '@/components/LivePriceTicker'
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import Image from 'next/image'
+import { fetchTokenData } from '@/lib/token-data'
 
 const CONTRACT_ADDRESS = '0xEA1221B4d80A89BD8C75248Fae7c176BD1854698'
 const UNISWAP_URL = 'https://app.uniswap.org/swap?outputCurrency=0xEA1221B4d80A89BD8C75248Fae7c176BD1854698&chain=base'
 
-export default function Home() {
-  const [stats, setStats] = useState({
-    totalSupply: '1,000,000,000',
-    holders: '0',
-    price: '$0.00',
-    marketCap: '$0',
-  })
+export default async function Home() {
+  const tokenData = await fetchTokenData()
 
   const communityLinks = [
-    { name: 'GitHub', url: 'https://github.com', icon: '⚙️' },
-    { name: 'X (Twitter)', url: 'https://x.com', icon: '𝕏' },
+    { name: 'GitHub', url: 'https://github.com/agunnaya001', icon: '⚙️' },
+    { name: 'X (Twitter)', url: 'https://x.com/agunnayalabs', icon: '𝕏' },
     { name: 'Telegram', url: 'https://t.me', icon: '✈️' },
   ]
 
@@ -30,22 +28,25 @@ export default function Home() {
       <Navbar />
 
       <main className="min-h-screen">
+        {/* Live Price Ticker */}
+        <LivePriceTicker data={tokenData} />
+
         {/* Hero Section */}
         <Section className="pt-12 lg:pt-24 pb-12 lg:pb-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="space-y-6">
               <div className="inline-block px-4 py-2 bg-secondary rounded-full text-sm font-semibold text-accent">
-                Next-Generation Blockchain
+                GameFi & DeFi on Base
               </div>
 
               <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                <span className="text-accent">Agunnaya Labs</span> Token
+                <span className="text-accent">AGL Token</span> Powers the Ecosystem
               </h1>
 
               <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-xl">
-                Experience innovative blockchain solutions powered by the AGL token. Community-driven, 
-                transparent, and built for the future of decentralized finance.
+                AGL is the native utility and governance token of Agunnaya Labs. Stake, earn rewards, 
+                access Vibe Studio AI IDE, and participate in our growing GameFi and DeFi ecosystem built on Base.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -63,51 +64,41 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Visual */}
+            {/* Right Visual - Neon Logo */}
             <div className="flex items-center justify-center">
-              <div className="relative w-full max-w-sm h-80 bg-gradient-to-br from-accent/20 to-accent/5 rounded-lg border border-accent/30 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-6xl font-bold text-accent mb-4">AGL</div>
-                  <p className="text-muted-foreground">Agunnaya Labs Token</p>
-                </div>
+              <div className="relative w-full max-w-sm h-96 flex items-center justify-center group">
+                <div className="absolute inset-0 bg-accent/10 blur-3xl rounded-full group-hover:bg-accent/20 transition-all duration-500" />
+                <Image
+                  src="/images/agl-logo-neon.png"
+                  alt="Agunnaya Labs Neon Logo"
+                  width={400}
+                  height={400}
+                  className="relative z-10 drop-shadow-2xl animate-pulse"
+                  priority
+                />
               </div>
             </div>
           </div>
         </Section>
 
-        {/* Token Stats Dashboard */}
+        {/* Token Metrics Dashboard */}
         <Section className="bg-secondary/30 py-12 lg:py-16">
           <div className="mb-8">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">Token Overview</h2>
-            <p className="text-muted-foreground">Real-time statistics and information</p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">Live Token Metrics</h2>
+            <p className="text-muted-foreground">Real-time data from GeckoTerminal • Updated every 5 minutes</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <TokenCard
-              title="Total Supply"
-              value={stats.totalSupply}
-              description="Maximum tokens available"
-              icon="📊"
-            />
-            <TokenCard
-              title="Token Holders"
-              value={stats.holders}
-              description="Active community members"
-              icon="👥"
-            />
-            <TokenCard
-              title="Current Price"
-              value={stats.price}
-              description="Live market price"
-              icon="💰"
-            />
-            <TokenCard
-              title="Market Cap"
-              value={stats.marketCap}
-              description="Total valuation"
-              icon="📈"
-            />
-          </div>
+          <TokenMetrics data={tokenData} />
+        </Section>
+
+        {/* Trading Pair Information */}
+        <Section className="py-12 lg:py-16">
+          <TradingPairCard data={tokenData} />
+        </Section>
+
+        {/* Security & Verification */}
+        <Section className="py-12 lg:py-16 bg-secondary/30">
+          <SecurityBadges data={tokenData} />
         </Section>
 
         {/* Smart Contract Section */}
@@ -117,19 +108,19 @@ export default function Home() {
               <div>
                 <h2 className="text-3xl font-bold text-foreground mb-4">Smart Contract</h2>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  Built on blockchain technology with transparent, auditable smart contracts. 
-                  The AGL token represents true decentralization with immutable records on the blockchain.
+                  AGL is built on Base blockchain with transparent, auditable smart contracts. 
+                  The contract is verified on BaseScan with full transparency and immutable records.
                 </p>
 
                 <div className="mb-6 p-4 bg-background rounded-lg border border-border">
-                  <p className="text-xs text-muted-foreground mb-2">Contract Address:</p>
+                  <p className="text-xs text-muted-foreground mb-2">Token Address:</p>
                   <p className="font-mono text-sm break-all text-accent font-semibold">
                     {CONTRACT_ADDRESS}
                   </p>
                 </div>
 
                 <Link
-                  href={`https://etherscan.io/token/${CONTRACT_ADDRESS}`}
+                  href={`https://basescan.org/token/${CONTRACT_ADDRESS}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary inline-block"
@@ -141,24 +132,24 @@ export default function Home() {
               <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg p-8 border border-border">
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
-                    <div className="text-2xl">🔒</div>
+                    <div className="text-2xl">✅</div>
                     <div>
-                      <h3 className="font-semibold text-foreground">Secure</h3>
-                      <p className="text-sm text-muted-foreground">Audited and verified smart contracts</p>
+                      <h3 className="font-semibold text-foreground">Verified</h3>
+                      <p className="text-sm text-muted-foreground">Contract verified on BaseScan</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="text-2xl">🌍</div>
+                    <div className="text-2xl">🔐</div>
                     <div>
-                      <h3 className="font-semibold text-foreground">Transparent</h3>
-                      <p className="text-sm text-muted-foreground">All transactions recorded on blockchain</p>
+                      <h3 className="font-semibold text-foreground">Secure</h3>
+                      <p className="text-sm text-muted-foreground">GT Security Score: 28/100</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="text-2xl">⚡</div>
                     <div>
-                      <h3 className="font-semibold text-foreground">Efficient</h3>
-                      <p className="text-sm text-muted-foreground">Fast and low-cost transactions</p>
+                      <h3 className="font-semibold text-foreground">Low Fees</h3>
+                      <p className="text-sm text-muted-foreground">0.01% pool fee on Uniswap V4</p>
                     </div>
                   </div>
                 </div>
