@@ -1,0 +1,20 @@
+# Robots.txt for Agunnaya Labs Token Site
+# Allow all search engines to crawl
+
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /private
+
+# Specific bot rules
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Crawl delay to prevent server overload
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://www.agunnayalabs.xyz/sitemap.xml
