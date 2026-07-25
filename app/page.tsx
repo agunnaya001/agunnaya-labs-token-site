@@ -11,6 +11,7 @@ import { CommunityShowcase } from '@/components/CommunityShowcase'
 import { AnalyticsSection } from '@/components/AnalyticsSection'
 import { TradingPairCard } from '@/components/TradingPairCard'
 import { LivePriceTicker } from '@/components/LivePriceTicker'
+import { OnChainVerification } from '@/components/OnChainVerification'
 import Link from 'next/link'
 import { fetchTokenData } from '@/lib/token-data'
 
@@ -228,6 +229,11 @@ export default async function Home() {
               </div>
             </div>
           </div>
+        </Section>
+
+        {/* Live On-Chain Verification (api.agunnayalabs.xyz) */}
+        <Section className="py-16 lg:py-24">
+          <OnChainVerification />
         </Section>
       </main>
 
