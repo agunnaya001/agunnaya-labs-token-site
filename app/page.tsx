@@ -33,18 +33,18 @@ export default function Home() {
 
       <main id="top">
         <section className="landing-hero">
-          <p className="domain-label">aglstudio.xyz</p>
-          <h1>Build on <span>Base.</span></h1>
-          <p className="hero-description">Create, launch, manage, and scale fully custom on-chain applications, linear bonding curve tokens, DAOs, GameFi reward structures, and autonomous AI agents in minutes. No Solidity experience required.</p>
-          <div className="hero-actions"><a className="primary-cta" href={AGL_CONFIG.external.studio} target="_blank" rel="noreferrer">Enter Developer Studio <ArrowRight data-icon="inline-end" /></a><a className="secondary-cta" href={AGL_CONFIG.links.baseScanToken} target="_blank" rel="noreferrer">Inspect AGL on BaseScan <ExternalLink data-icon="inline-end" /></a></div>
+          <p className="domain-label">agunnaya labs</p>
+          <h1>On-chain tools for the <span>next frontier.</span></h1>
+          <p className="hero-description">AGL is the utility token and coordination layer for a growing ecosystem of developer tools, autonomous systems, and experiments built on Base.</p>
+          <div className="hero-actions"><a className="primary-cta" href={AGL_CONFIG.links.baseScanToken} target="_blank" rel="noreferrer">View AGL on Base <ExternalLink data-icon="inline-end" /></a><a className="secondary-cta" href={AGL_CONFIG.external.studio} target="_blank" rel="noreferrer">Explore the ecosystem <ArrowRight data-icon="inline-end" /></a></div>
         </section>
 
         <section id="features" className="feature-stack">
-          <a className="feature-link feature-link-purple" href={AGL_CONFIG.external.studio} target="_blank" rel="noreferrer"><span className="feature-icon">⌁</span><span>Investor Pitch Deck (PDF)</span><ArrowRight data-icon="inline-end" /></a>
-          <a className="feature-link" href={AGL_CONFIG.external.studio} target="_blank" rel="noreferrer"><span>Features</span><ArrowRight data-icon="inline-end" /></a>
+          <a className="feature-link feature-link-purple" href={AGL_CONFIG.external.studio} target="_blank" rel="noreferrer"><span className="feature-icon">⌁</span><span>AGL Studio</span><ArrowRight data-icon="inline-end" /></a>
+          <a className="feature-link" href={AGL_CONFIG.links.baseScanToken} target="_blank" rel="noreferrer"><span>Token utilities</span><ArrowRight data-icon="inline-end" /></a>
         </section>
 
-        <section id="network" className="network-section"><div className="stat-card"><span>TRANSACTIONS PROCESSED</span><strong>1,245,892</strong></div><div className="stat-card"><span>CONTRACTS GENERATED</span><strong>24,852</strong></div><div className="stat-card"><span>NETWORK</span><strong>BASE</strong></div></section>
+        <section id="network" className="network-section"><div className="stat-card"><span>NETWORK</span><strong>BASE</strong></div><div className="stat-card"><span>ASSET</span><strong>AGL</strong></div><div className="stat-card"><span>STATUS</span><strong>LIVE</strong></div></section>
 
         <section className="contract-strip"><div><span>AGL TOKEN</span><strong>Native utility for the Agunnaya Labs ecosystem.</strong></div><button onClick={copyAddress} aria-label="Copy AGL token contract address"><code>{copied ? 'Copied' : shortAddress(AGL_CONFIG.token.address)}</code><Copy data-icon="inline-end" /></button></section>
       </main>
