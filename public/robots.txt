@@ -17,4 +17,4 @@ Allow: /
 Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://www.agunnayalabs.xyz/sitemap.xml
+Sitemap: https://agunnayalabs.xyz/sitemap.xml

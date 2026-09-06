@@ -11,9 +11,9 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'AGL Token - GameFi & DeFi on Base | Agunnaya Labs',
+  title: 'Agunnaya Labs — Infrastructure for the agentic economy',
   description:
-    'AGL is the native utility & governance token of Agunnaya Labs, a GameFi and DeFi ecosystem built on Base. Trade AGL/CHONK9K, stake, earn rewards, and access Vibe Studio AI IDE.',
+    'Agunnaya Labs builds coordination infrastructure for autonomous software, onchain identity, and open builders on Base.',
   keywords: [
     'AGL token',
     'Agunnaya Labs',
@@ -28,21 +28,21 @@ export const metadata: Metadata = {
   ],
   generator: 'v0.app',
   creator: 'Agunnaya Labs',
-  metadataBase: new URL('https://www.agunnayalabs.xyz'),
+  metadataBase: new URL('https://agunnayalabs.xyz'),
   alternates: {
-    canonical: 'https://www.agunnayalabs.xyz',
+    canonical: 'https://agunnayalabs.xyz',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.agunnayalabs.xyz',
+    url: 'https://agunnayalabs.xyz',
     siteName: 'Agunnaya Labs Token (AGL)',
     title: 'AGL Token - GameFi & DeFi on Base',
     description:
       'Native utility token of Agunnaya Labs ecosystem. Trade, stake, and earn rewards.',
     images: [
       {
-        url: 'https://www.agunnayalabs.xyz/images/og-image.png',
+        url: 'https://agunnayalabs.xyz/images/og-image.png',
         width: 1200,
         height: 630,
         alt: 'AGL Token Hero',
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     site: '@agunnayalabs',
     title: 'AGL Token - GameFi & DeFi on Base',
     description: 'Native utility token of Agunnaya Labs ecosystem.',
-    images: ['https://www.agunnayalabs.xyz/images/og-image.png'],
+    images: ['https://agunnayalabs.xyz/images/og-image.png'],
   },
   icons: {
     icon: [
@@ -90,12 +90,12 @@ export default function RootLayout({
     '@graph': [
       {
         '@type': 'Organization',
-        '@id': 'https://www.agunnayalabs.xyz/#organization',
+        '@id': 'https://agunnayalabs.xyz/#organization',
         name: 'Agunnaya Labs',
-        url: 'https://www.agunnayalabs.xyz',
+        url: 'https://agunnayalabs.xyz',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://www.agunnayalabs.xyz/agl-logo.svg',
+          url: 'https://agunnayalabs.xyz/agl-logo.svg',
           width: 256,
           height: 256,
         },
@@ -104,15 +104,15 @@ export default function RootLayout({
       },
       {
         '@type': 'Thing',
-        '@id': 'https://www.agunnayalabs.xyz/#token',
+        '@id': 'https://agunnayalabs.xyz/#token',
         name: 'AGL Token',
         description:
           'Native utility and governance token of Agunnaya Labs ecosystem',
-        image: 'https://www.agunnayalabs.xyz/images/agl-logo-neon.png',
+        image: 'https://agunnayalabs.xyz/images/agl-logo-neon.png',
       },
       {
         '@type': 'FAQPage',
-        '@id': 'https://www.agunnayalabs.xyz/#faq',
+        '@id': 'https://agunnayalabs.xyz/#faq',
         mainEntity: [
           {
             '@type': 'Question',
@@ -150,25 +150,25 @@ export default function RootLayout({
       },
       {
         '@type': 'BreadcrumbList',
-        '@id': 'https://www.agunnayalabs.xyz/#breadcrumb',
+        '@id': 'https://agunnayalabs.xyz/#breadcrumb',
         itemListElement: [
           {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://www.agunnayalabs.xyz',
+            item: 'https://agunnayalabs.xyz',
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Tokenomics',
-            item: 'https://www.agunnayalabs.xyz/tokenomics',
+            item: 'https://agunnayalabs.xyz/tokenomics',
           },
           {
             '@type': 'ListItem',
             position: 3,
             name: 'Staking',
-            item: 'https://www.agunnayalabs.xyz/stake',
+            item: 'https://agunnayalabs.xyz/stake',
           },
         ],
       },
