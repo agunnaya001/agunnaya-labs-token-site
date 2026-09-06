@@ -26,7 +26,7 @@ export default function Home() {
       <div className="site-grid" aria-hidden="true" />
       <header className="site-header">
         <a href="#top" className="brand" aria-label="Agunnaya Labs home">
-          <span className="brand-mark">A</span>
+          <img className="brand-logo" src="/agl-logo.png" alt="Agunnaya Labs" />
           <span>AGUNNAYA <em>LABS</em></span>
         </a>
         <nav className="desktop-nav" aria-label="Primary navigation">
@@ -50,7 +50,7 @@ export default function Home() {
             <div className="hero-actions"><a className="button button-primary" href="#ecosystem">Explore the network <ArrowUpRight data-icon="inline-end" /></a><a className="text-link" href={AGL_CONFIG.links.baseScanToken} target="_blank" rel="noreferrer">Read the contract <ExternalLink data-icon="inline-end" /></a></div>
             <div className="hero-meta"><span>01</span><span>AGL / BASE / 2026</span><span className="meta-line" /></div>
           </div>
-          <div className="hero-orbit" aria-hidden="true"><div className="orbit-ring orbit-ring-one" /><div className="orbit-ring orbit-ring-two" /><div className="orbit-core"><span>AGL</span><small>BASE</small></div><span className="orbit-label label-one">OPEN<br />COORDINATION</span><span className="orbit-label label-two">ONCHAIN<br />UTILITY</span><span className="orbit-label label-three">HUMAN<br />AGENCY</span></div>
+          <div className="hero-orbit" aria-hidden="true"><div className="orbit-ring orbit-ring-one" /><div className="orbit-ring orbit-ring-two" /><div className="orbit-core"><img src="/agl-logo.png" alt="AGL token mark" /><small>BASE / ONCHAIN</small></div><span className="orbit-label label-one">OPEN<br />COORDINATION</span><span className="orbit-label label-two">ONCHAIN<br />UTILITY</span><span className="orbit-label label-three">HUMAN<br />AGENCY</span></div>
         </section>
 
         <section className="ticker" aria-label="Network status"><div><span className="ticker-label">LIVE NETWORK</span><strong>BASE</strong></div><div><span className="ticker-label">TOKEN</span><strong>AGL</strong></div><div><span className="ticker-label">CONTRACT</span><strong>{shortAddress(AGL_CONFIG.token.address)}</strong></div><div><span className="ticker-label">STATUS</span><strong className="online">ONLINE <span className="status-dot" /></strong></div></section>
@@ -67,7 +67,7 @@ export default function Home() {
         <section id="builders" className="section-shell builder-section"><div className="builder-copy"><span className="eyebrow">/ 04 — FOR BUILDERS</span><h2>The best systems<br />leave room for <span>agency.</span></h2><p>Whether you are composing an agent, contributing to an open protocol, or testing a new coordination primitive, there is a place to start.</p><a className="button button-primary" href={AGL_CONFIG.external.github} target="_blank" rel="noreferrer">Explore the code <Code2 data-icon="inline-start" /></a></div><div className="builder-terminal" aria-label="AGL builder command"><div className="terminal-bar"><i /><i /><i /><span>agunnaya / getting-started</span></div><pre><code><span className="terminal-muted">$</span> git clone agunnaya-labs/token-site{`\n`}<span className="terminal-muted">$</span> cd token-site{`\n`}<span className="terminal-accent">$</span> make something useful{`\n`}{`\n`}<span className="terminal-muted">// permissionless by design</span></code></pre></div></section>
       </main>
 
-      <footer className="site-footer"><div className="footer-brand"><span className="brand-mark">A</span><span>AGUNNAYA <em>LABS</em></span><p>Coordination infrastructure for an agentic world.</p></div><div className="footer-links"><a href={AGL_CONFIG.external.studio} target="_blank" rel="noreferrer">AGL Studio <ArrowUpRight data-icon="inline-end" /></a><a href={AGL_CONFIG.external.github} target="_blank" rel="noreferrer">GitHub <ArrowUpRight data-icon="inline-end" /></a><a href={AGL_CONFIG.external.x} target="_blank" rel="noreferrer">X <ArrowUpRight data-icon="inline-end" /></a></div><div className="footer-bottom"><span>© 2026 Agunnaya Labs</span><span>Built on <strong>Base</strong></span></div></footer>
+      <footer className="site-footer"><div className="footer-brand"><img className="brand-logo" src="/agl-logo.png" alt="Agunnaya Labs" /><span>AGUNNAYA <em>LABS</em></span><p>Coordination infrastructure for an agentic world.</p></div><div className="footer-links"><a href={AGL_CONFIG.external.studio} target="_blank" rel="noreferrer">AGL Studio <ArrowUpRight data-icon="inline-end" /></a><a href={AGL_CONFIG.external.github} target="_blank" rel="noreferrer">GitHub <ArrowUpRight data-icon="inline-end" /></a><a href={AGL_CONFIG.external.x} target="_blank" rel="noreferrer">X <ArrowUpRight data-icon="inline-end" /></a></div><div className="footer-bottom"><span>© 2026 Agunnaya Labs</span><span>Built on <strong>Base</strong></span></div></footer>
     </div>
   )
 }
